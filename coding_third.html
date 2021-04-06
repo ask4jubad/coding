@@ -19,9 +19,19 @@ div {
   <div>
     <img alt="" src="resources/ogre.jpg" />
   </div>
+  <br>
+  <button onclick="myFunction()">Try it</button>
 
   <script>
-    window.alert ("Ogre alert! Beware!!");
+  function myFunction(){
+    let x = 1;
+     while (x < 4) {
+       confirm(x);
+       x = x+1;
+     }
+     alert ("Ogre alert! Beware!!");
+  }
+
   </script>
 
 </body>
