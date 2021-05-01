@@ -10,16 +10,23 @@ div {
   width: 600px;
   height: 600px;
   overflow: hidden;
+  align-content: center;
 }
+/* #image{
+
+  background-repeat: repeat;
+} */
 </style>
 
 </head>
 
 <body>
   <div>
+     <!-- id= "image" -->
     <img alt="" src="resources/ogre.jpg" />
   </div>
   <br>
+  Password <input type="Password"  placeholder="Password">
   <button onclick="myFunction()">Try it</button>
 
   <script>
@@ -29,7 +36,7 @@ div {
        confirm(x);
        x = x+1;
      }
-     alert ("Ogre alert! Beware!!");
+     alert("Ogre alert! Beware!!");
   }
 
   </script>

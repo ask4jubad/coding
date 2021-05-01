@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordograph</title>
+
+    <style media='screen'>
+      #logo{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        display: block;
+      }
+
+      #worddiv{
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+      }
+
+      .texts{
+        margin: auto;
+        width: 50%;
+        color: red;
+      }
+
+      #footer{
+        margin: auto;
+        width: 50%;
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <div>
+      <img id= "logo" alt="" src="resources/wordograph.png" />
+    </div>
+    <div style="margin:auto; width: 50%;">
+      <button type="button" id="start" onclick="start()"> START OR RESTART!</button>
+    </div>
+    <div class="texts">
+      This game was intentionally made dumb. So, we ask you to please make sure that your CAPS LOCK is on while playing this game.
+      <br>
+      Thank you.
+      <br>
+    </div>
+    <div id="worddiv">
+      <br>
+      <br>
+      <input type="text" name="word" id="word">
+      <br>
+      <br>
+      <button id="submit" onclick="wordSubmit()">Submit</button>
+    </div>
+
+    <footer id="footer">
+    If you would like to try this yourself as well and to confirm that the words you have inputed exist, kindly visit this
+    <a href="https://github.com/raun/Scrabble/blob/master/words.txt">link</a>.
+    </footer>
+
+    <script>
+      // window.onload = begin();
+      // function begin(){
+      //   var score = 0;
+        var collected = [];
+      // }
+        // let characters = "ABCDEFGHIJKLMNOPQQRSTUWVXYZ";
+        var wordbank = ['no', 'so', 'to'];
+        var score = 0;
+        // wordlist was obtained from this site.
+        //https://github.com/raun/Scrabble/blob/master/words.txt
+
+      function wordSubmit(){
+
+      let val1 = document.getElementById('word').value;
+// )
+        if (wordbank.includes(val1) && !(collected.includes(val1))){
+          score = score + (val1.length);
+          collected.push(val1);
+          alert(collected);
+          if (collected.length === wordbank.length){
+            alert("Your score is" + score.toString() + ". You have won!");
+          }
+          document.getElementById('word').value = "";
+
+        }
+      }
+
+      function start(){
+        location.reload();
+        var score = 0;
+        var collected = [];
+      }
+    </script>
+  </body>
+</html>
