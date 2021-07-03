@@ -12,12 +12,35 @@
         width: 50%;
         display: block;
       }
+      #start{
+        margin: auto !important;
+        width: 50% !important;
+        /* border: 3px solid green; */
+        padding: 10px;
+        align-self: center;
+      }
 
       #worddiv{
         margin: auto;
         width: 50%;
-        border: 3px solid green;
+        border: 2px solid green;
         padding: 10px;
+        align-self: center !important;
+      }
+
+      #word{
+        margin: auto;
+        width: 50%;
+        /* border: 3px solid green; */
+        padding: 10px;
+        align-self: center;
+      }
+      #submit{
+        margin: auto;
+        width: 50%;
+        /* border: 3px solid green; */
+        padding: 10px;
+        align-self: center;
       }
 
       .texts{
@@ -44,7 +67,7 @@
       <button type="button" id="start" onclick="start()"> START OR RESTART!</button>
     </div>
     <div class="texts">
-      This game was intentionally made dumb. So, we ask you to please make sure that your CAPS LOCK is on while playing this game.
+      This game was intentionally made dumb. So, we ask you to please make sure that your CAPS LOCK is off while playing this game.
       <br>
       Thank you.
       <br>
@@ -63,6 +86,7 @@
     <a href="https://github.com/raun/Scrabble/blob/master/words.txt">link</a>.
     </footer>
 
+
     <script>
       // window.onload = begin();
       // function begin(){
@@ -78,13 +102,14 @@
       function wordSubmit(){
 
       let val1 = document.getElementById('word').value;
+      val1= val1.toLowerCase()
 // )
         if (wordbank.includes(val1) && !(collected.includes(val1))){
           score = score + (val1.length);
           collected.push(val1);
           alert(collected);
           if (collected.length === wordbank.length){
-            alert("Your score is" + score.toString() + ". You have won!");
+            alert("Your score is " + score.toString() + ". You have won!");
           }
           document.getElementById('word').value = "";
 
